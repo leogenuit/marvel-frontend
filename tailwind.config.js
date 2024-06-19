@@ -9,6 +9,9 @@ module.exports = {
       boxShadow: {
         "box-shadow": "2px 3px 13px black",
       },
+      backgroundImage: {
+        spiderman: "url('/img/spider-man.png')",
+      },
     },
   },
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
