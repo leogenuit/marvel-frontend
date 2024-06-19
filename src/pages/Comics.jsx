@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/characters");
+        const response = await axios.get("http://localhost:4000/comics");
         console.log(response.data);
         setData(response.data);
         setIsLoading(false);
@@ -30,21 +30,21 @@ const Home = () => {
             return (
               <div key={element._id} className="shadow-box-shadow rounded-lg ">
                 <Link to="#">
-                  {element.thumbnail.path.includes("image_not_available") ? (
-                    ""
-                  ) : (
-                    <div className="flex w-96 h-4/5">
-                      <img
-                        className="w-2/4 h-5/5  object-cover rounded-tl-lg rounded-bl-lg"
-                        src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
-                        alt="image of comics"
-                      />
-                      <div className="p-2">
-                        <h3 className="font-bold ">{element.name}</h3>
-                        <p className=" ">{element.description}</p>
-                      </div>
+                  <div className="flex w-96">
+                    <img
+                      className="w-40  rounded-tl-lg rounded-bl-lg"
+                      src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
+                      alt="image of comics"
+                    />
+                    <div className="p-2">
+                      <h3 className="font-bold ">{element.title}</h3>
+                      <p className="italic">
+                        {element.description
+                          ? element.description.substring(0, 40)
+                          : "Description non disponible"}
+                      </p>
                     </div>
-                  )}
+                  </div>
                 </Link>
               </div>
             );
