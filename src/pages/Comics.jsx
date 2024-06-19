@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import "./comics.css";
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -25,14 +25,18 @@ const Home = () => {
       {isLoading ? (
         <h1>Merci de patienter</h1>
       ) : (
-        <div className="flex flex-wrap justify-between gap-8">
-          {data.results.map((element) => {
-            return (
-              <div key={element._id} className="shadow-box-shadow rounded-lg ">
-                <Link to="#">
-                  <div className="flex w-96">
+        <div>
+          <h1 className="text-center text-8xl mb-32">Comics</h1>
+          <div className="flex flex-wrap justify-between gap-8 ">
+            {data.results.map((element, index) => {
+              return (
+                <div
+                  key={element._id}
+                  className="shadow-box-shadow rounded-lg "
+                >
+                  <div className="flex w-80 bg-white rounded-lg">
                     <img
-                      className="w-40  rounded-tl-lg rounded-bl-lg"
+                      className="w-1/2 rounded-tl-lg rounded-bl-lg"
                       src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
                       alt="image of comics"
                     />
@@ -45,10 +49,10 @@ const Home = () => {
                       </p>
                     </div>
                   </div>
-                </Link>
-              </div>
-            );
-          })}
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>
