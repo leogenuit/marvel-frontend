@@ -1,8 +1,12 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
 const App = () => {
   return (
-    <>
-      <p className="text-blue-vinted">hello</p>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
   );
 };
 

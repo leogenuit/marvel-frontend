@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {},
-      boxShadow: {},
+      boxShadow: {
+        "box-shadow": "2px 3px 13px black",
+      },
     },
   },
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
