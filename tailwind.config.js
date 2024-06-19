@@ -3,7 +3,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        "red-marvel": "#EE161E",
+      },
       boxShadow: {
         "box-shadow": "2px 3px 13px black",
       },
