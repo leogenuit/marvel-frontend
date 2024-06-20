@@ -10,7 +10,7 @@ const Home = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/characters?name=${search}`
+          `leo--marvel--jb29wjf8x9mr.code.run/characters?name=${search}`
         );
 
         console.log(response.data);
