@@ -10,11 +10,10 @@ const Home = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `leo--marvel--jb29wjf8x9mr.code.run/characters?name=${search}`
+          `https://leo--marvel--jb29wjf8x9mr.code.run/characters?name=${search}`
         );
 
         console.log(response.data);
-
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
