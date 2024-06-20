@@ -11,7 +11,7 @@ const CharacterComics = () => {
   useEffect(() => {
     const fetchAllComicsByOneCharacter = async () => {
       const response = await axios.get(
-        `leo--marvel--jb29wjf8x9mr.code.run/comics/${characterId}`
+        `https://leo--marvel--jb29wjf8x9mr.code.run/comics/${characterId}`
       );
       console.log(response.data);
       setData(response.data);

@@ -10,7 +10,7 @@ const Comics = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `leo--marvel--jb29wjf8x9mr.code.run/comics?title=${search}`
+          `https://leo--marvel--jb29wjf8x9mr.code.run/comics?title=${search}`
         );
         console.log(response.data);
         setData(response.data);
