@@ -2,14 +2,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import comicsImage from "../assets/img/comics-image.png";
 
-const Home = () => {
+const Comics = ({ search }) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/comics");
+        const response = await axios.get(
+          `http://localhost:4000/comics?title=${search}`
+        );
         console.log(response.data);
         setData(response.data);
         setIsLoading(false);
@@ -18,7 +20,7 @@ const Home = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [search]);
 
   return (
     <div className="w-3/4 mx-auto">
@@ -60,4 +62,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default Comics;
