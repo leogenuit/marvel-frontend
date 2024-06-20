@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import "./comics.css";
 import comicsImage from "../assets/img/comics-image.png";
 
 const Home = () => {
