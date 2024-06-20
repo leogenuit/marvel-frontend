@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "./comics.css";
+import comicsImage from "../assets/img/comics-image.png";
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -26,7 +27,9 @@ const Home = () => {
         <h1>Merci de patienter</h1>
       ) : (
         <div>
-          <h1 className="text-center text-8xl mb-32">Comics</h1>
+          {/* <h1 className="text-center text-red-marvel text-6xl mb-16">Comics</h1> */}
+          <img src={comicsImage} alt="" className="w-1/4 mx-auto mb-16" />
+
           <div className="flex flex-wrap justify-between gap-8 ">
             {data.results.map((element, index) => {
               return (

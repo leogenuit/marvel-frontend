@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import personnageImage from "../assets/img/personnage-img.png";
 const Home = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +26,8 @@ const Home = () => {
         <h1>Merci de patienter</h1>
       ) : (
         <div>
-          <h1 className="text-center text-8xl mb-32">Personnage</h1>
+          {/* <h1 className="text-center text-6xl mb-16">Personnage</h1> */}
+          <img src={personnageImage} alt="" className="w-2/4 mx-auto mb-16" />
           <div className="flex flex-wrap justify-between gap-8">
             {data.results.map((element) => {
               return (

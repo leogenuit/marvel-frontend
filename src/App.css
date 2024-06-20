@@ -2,9 +2,9 @@
   @apply box-border;
 }
 body {
-  background: url("./assets/img/spid.png");
+  background: url("./assets/img/spiderman.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 12%;
   background-attachment: fixed;
-  background-position: right 100px;
+  background-position: right 140px;
 }

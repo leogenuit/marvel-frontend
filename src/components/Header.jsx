@@ -1,14 +1,14 @@
 import React from "react";
-import logoMarvel from "../assets/img/logo-marvel.png";
+import logo from "../assets/img/logo.png";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import ButtonSecondary from "./ButtonSecondary";
 const Header = () => {
   return (
-    <div className="py-8 mb-32 bg-red-marvel sticky top-0 shadow-box-shadow">
+    <div className="py-8 mb-16 bg-gradient-to-r from-blue-dark-marvel to-blue-light-marvel sticky top-0 shadow-box-shadow">
       <div className="flex items-center justify-evenly gap-8  mx-auto">
         <Link to="/">
-          <img src={logoMarvel} alt="logo marvel" className="w-36" />
+          <img src={logo} alt="logo marvel" className="w-40" />
         </Link>
         <input type="text" className="border-2 w-80" />
         <nav className="flex gap-8">
