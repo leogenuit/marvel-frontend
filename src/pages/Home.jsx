@@ -1,16 +1,18 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import personnageImage from "../assets/img/personnage-img.png";
 const Home = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
+  // const characterId = useParams();
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:4000/characters");
+
         console.log(response.data);
+
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -33,13 +35,13 @@ const Home = () => {
               return (
                 <div
                   key={element._id}
-                  className="shadow-box-shadow rounded-lg "
+                  className="shadow-box-shadow rounded-lg w-1/4"
                 >
-                  <Link to="#">
+                  <Link to={`/comics/${element._id}`}>
                     {element.thumbnail.path.includes(notAvailable) ? null : (
                       <div className="flex w-80 bg-white rounded-lg">
                         <img
-                          className="w-1/2 h-full rounded-tl-lg rounded-bl-lg  max-h-52"
+                          className="w-full h-full rounded-tl-lg rounded-bl-lg  max-h-52"
                           src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
                           alt="image of comics"
                         />
