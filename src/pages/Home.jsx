@@ -1,15 +1,17 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import personnageImage from "../assets/img/personnage-img.png";
-const Home = () => {
+const Home = ({ search }) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  // const characterId = useParams();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/characters");
+        const response = await axios.get(
+          `http://localhost:4000/characters?name=${search}`
+        );
 
         console.log(response.data);
 
@@ -20,7 +22,7 @@ const Home = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [search]);
   const notAvailable = "image_not_available";
   return (
     <div className="w-3/4 mx-auto">

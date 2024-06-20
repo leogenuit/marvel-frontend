@@ -3,14 +3,22 @@ import logo from "../assets/img/logo.png";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import ButtonSecondary from "./ButtonSecondary";
-const Header = () => {
+const Header = ({ search, setSearch }) => {
   return (
     <div className="py-8 mb-16 bg-gradient-to-r from-blue-dark-marvel to-blue-light-marvel sticky top-0 shadow-box-shadow">
       <div className="flex items-center justify-evenly gap-8  mx-auto">
         <Link to="/">
           <img src={logo} alt="logo marvel" className="w-40" />
         </Link>
-        <input type="text" className="border-2 w-80" />
+        <input
+          className="border-2 w-80"
+          type="text"
+          placeholder="Rechercher des articles"
+          value={search}
+          onChange={(event) => {
+            setSearch(event.target.value);
+          }}
+        />
         <nav className="flex gap-8">
           <div className="flex gap-2">
             <Link to="/">
