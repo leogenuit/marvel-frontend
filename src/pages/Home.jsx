@@ -12,8 +12,6 @@ const Home = ({ search }) => {
         const response = await axios.get(
           `https://leo--marvel--jb29wjf8x9mr.code.run/characters?name=${search}`
         );
-
-        console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {

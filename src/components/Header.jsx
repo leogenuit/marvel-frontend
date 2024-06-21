@@ -13,7 +13,7 @@ const Header = ({ search, setSearch }) => {
         <input
           className="border-2 w-80"
           type="text"
-          placeholder="Rechercher des articles"
+          placeholder="Rechercher..."
           value={search}
           onChange={(event) => {
             setSearch(event.target.value);
