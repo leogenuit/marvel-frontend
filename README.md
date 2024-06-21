@@ -18,4 +18,16 @@ To launch your development sever :
 yarn dev
 ```
 
-- Use the routes as you want
+# If you using \*\* npm make this command line :
+
+To install all dependences :
+
+```bash
+npm install
+```
+
+To launch your development sever :
+
+```bash
+npm run dev
+```
