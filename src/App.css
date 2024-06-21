@@ -7,4 +7,5 @@ body {
   background-size: 12%;
   background-attachment: fixed;
   background-position: right 140px;
+  z-index: 55;
 }

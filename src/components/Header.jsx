@@ -5,7 +5,7 @@ import Button from "./Button";
 import ButtonSecondary from "./ButtonSecondary";
 const Header = ({ search, setSearch }) => {
   return (
-    <div className="py-8 mb-16 bg-gradient-to-r from-blue-dark-marvel to-blue-light-marvel sticky top-0 shadow-box-shadow">
+    <div className="py-8 bg-gradient-to-r from-blue-dark-marvel to-blue-light-marvel sticky top-0 shadow-box-shadow">
       <div className="flex items-center justify-evenly gap-8  mx-auto">
         <Link to="/">
           <img src={logo} alt="logo marvel" className="w-40" />

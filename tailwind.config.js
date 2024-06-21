@@ -14,6 +14,7 @@ module.exports = {
       },
       backgroundImage: {
         spiderman: "url('/img/spider-man.png')",
+        comics: "url('/img/bgcomics.png')",
       },
     },
   },
