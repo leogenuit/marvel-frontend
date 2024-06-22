@@ -1,8 +1,8 @@
 # Marvel Frontend
 
-How to launch the project ?
+### Clone the Project
 
-- 1 Clone the project
+To start, clone the project using the following command:
 
 ### If you using _yarn_ make this command line :
 
