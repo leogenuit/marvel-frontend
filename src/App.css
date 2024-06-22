@@ -1,6 +1,9 @@
 * {
   @apply box-border;
 }
+
+/* Style for spideman image */
+
 body {
   background: url("./assets/img/spiderman.png");
   background-repeat: no-repeat;
@@ -8,4 +11,7 @@ body {
   background-attachment: fixed;
   background-position: right 140px;
   z-index: 55;
+}
+#root {
+  min-height: 100vh;
 }

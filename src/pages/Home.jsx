@@ -7,6 +7,7 @@ const Home = ({ search }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Get all characters
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -22,12 +23,12 @@ const Home = ({ search }) => {
   }, [search]);
   const notAvailable = "image_not_available";
   return (
-    <div className="pt-8 w-full mx-auto">
+    <div className="pt-16 w-full mx-auto pb-16 bg-gradient-to-l from-blue-light-marvel to-blue-dark-marvel">
       {isLoading ? (
         <h1>Merci de patienter</h1>
       ) : (
         <div>
-          <h1 className="text-center text-6xl mb-16">Personnages</h1>
+          <h1 className="text-center text-white text-4xl mb-16">Personnages</h1>
           <div className="w-3/4 mx-auto flex flex-wrap justify-between gap-8">
             {data.results.map((element) => {
               return (
@@ -73,9 +74,11 @@ const Home = ({ search }) => {
             })}
           </div>
           {data.count === 0 && (
-            <p className="text-center">
-              Aucun personnages ne correspond à votre recherche ...
-            </p>
+            <div className="min-h-60">
+              <p className="text-center text-white">
+                Aucun personnages ne correspond à votre recherche ...
+              </p>
+            </div>
           )}
         </div>
       )}

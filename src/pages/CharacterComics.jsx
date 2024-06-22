@@ -9,6 +9,7 @@ const CharacterComics = () => {
   const { characterId } = useParams();
 
   useEffect(() => {
+    // Get all Comics by one characters
     const fetchAllComicsByOneCharacter = async () => {
       try {
         const response = await axios.get(
