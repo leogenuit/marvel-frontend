@@ -39,6 +39,8 @@ To launch your development sever :
 npm run dev
 ```
 
+Contributions are welcome! Feel free to submit pull requests to improve the project.
+
 License
 This project is licensed under [Léo Genuit].
 
