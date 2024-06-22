@@ -4,7 +4,7 @@ How to launch the project ?
 
 - 1 Clone the project
 
-# If you using \*\* yarn make this command line :
+## If you using \*\* yarn make this command line :
 
 To install all dependences :
 
@@ -18,7 +18,7 @@ To launch your development sever :
 yarn dev
 ```
 
-# If you using \*\* npm make this command line :
+## If you using \*\* npm make this command line :
 
 To install all dependences :
 
