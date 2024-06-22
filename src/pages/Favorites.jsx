@@ -4,17 +4,17 @@ const Favorites = () => {
   const [favorites, setFavorites] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // Get all favorites
-    const fetchAllFavorites = async () => {
-      try {
-        const response = await axios.get("http://localhost:4000/favorites-all");
-        setFavorites(response.data);
-        setIsLoading(false);
-      } catch (error) {}
-    };
-    fetchAllFavorites();
-  }, []);
+  // useEffect(() => {
+  //   // Get all favorites
+  //   const fetchAllFavorites = async () => {
+  //     try {
+  //       const response = await axios.get("http://localhost:4000/favorites-all");
+  //       setFavorites(response.data);
+  //       setIsLoading(false);
+  //     } catch (error) {}
+  //   };
+  //   fetchAllFavorites();
+  // }, []);
 
   useEffect(() => {
     if (favorites !== null) {
