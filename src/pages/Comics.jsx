@@ -9,6 +9,7 @@ const Comics = ({ search }) => {
   const { comicId } = useParams();
 
   useEffect(() => {
+    // Get all comics
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -28,8 +29,6 @@ const Comics = ({ search }) => {
       const response = await axios.post("http://localhost:4000/favorites", {
         name: "re",
       });
-
-      console.log(response.data);
     } catch (error) {}
   };
 
@@ -51,13 +50,13 @@ const Comics = ({ search }) => {
 
   return (
     <>
-      <div className="pt-8 w-full mx-auto bg-gradient-to-r from-blue-light-marvel to-blue-dark-marvel">
+      <div className="pt-16 w-full mx-auto bg-gradient-to-l from-blue-light-marvel to-blue-dark-marvel pb-16">
         {isLoading ? (
           <h1>Merci de patienter</h1>
         ) : (
           <div>
             {favorites}
-            <h1 className="text-center text-white text-6xl mb-16">Comics</h1>
+            <h1 className="text-center text-white text-4xl mb-16">Comics</h1>
             {/* <img src={comicsImage} alt="" className="w-1/4 mx-auto mb-16" /> */}
 
             <div className="w-3/4 mx-auto flex flex-wrap justify-between gap-8 ">
@@ -90,9 +89,11 @@ const Comics = ({ search }) => {
               })}
             </div>
             {data.count === 0 && (
-              <p className="text-center">
-                Aucun personnages ne correspond à votre recherche ...
-              </p>
+              <div className="min-h-60">
+                <p className="text-center text-white">
+                  Aucun personnages ne correspond à votre recherche ...
+                </p>
+              </div>
             )}
           </div>
         )}

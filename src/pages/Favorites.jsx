@@ -5,6 +5,7 @@ const Favorites = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Get all favorites
     const fetchAllFavorites = async () => {
       try {
         const response = await axios.get("http://localhost:4000/favorites-all");
@@ -17,7 +18,6 @@ const Favorites = () => {
 
   useEffect(() => {
     if (favorites !== null) {
-      console.log("Favorites updated:", favorites);
     }
   }, [favorites]);
 
@@ -26,9 +26,11 @@ const Favorites = () => {
       {isLoading ? (
         <p>Chargement en cours</p>
       ) : (
-        <div className="w-3/4 mx-auto border-2">
-          <h1 className="text-center">Favorites</h1>
-          <div>
+        <div className="w-full mx-auto pt-56 pb-56 mx-auto pb-16 bg-gradient-to-l from-blue-light-marvel to-blue-dark-marvel">
+          <h1 className="text-center text-white text-4xl">
+            Retrouvez bientôt la liste de vos favoris ...
+          </h1>
+          {/* <div>
             {favorites.map((element) => {
               return (
                 <div>
@@ -36,7 +38,7 @@ const Favorites = () => {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
       )}
     </div>
