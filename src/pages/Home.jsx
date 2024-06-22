@@ -28,8 +28,6 @@ const Home = ({ search }) => {
       ) : (
         <div>
           <h1 className="text-center text-6xl mb-16">Personnages</h1>
-          {/* <img src={personnageImage} alt="" className="w-2/4 mx-auto mb-16" /> */}
-
           <div className="w-3/4 mx-auto flex flex-wrap justify-between gap-8">
             {data.results.map((element) => {
               return (
