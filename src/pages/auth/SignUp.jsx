@@ -38,7 +38,7 @@ const SignUp = ({ setToken, isMenuOpen }) => {
         setSuccessMessage("Votre compte à été créé avec succès !");
         setTimeout(() => {
           navigate("/");
-        }, 1800);
+        }, 1000);
       }
       //   window.location.reload();
     } catch (error) {

@@ -36,7 +36,7 @@ const Login = ({ setToken, isMenuOpen }) => {
         setSuccessMessage("Connexion réussie !");
         setTimeout(() => {
           navigate("/");
-        }, 1800);
+        }, 1000);
       }
     } catch (error) {
       console.log(error);
