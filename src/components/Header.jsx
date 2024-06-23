@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../assets/img/logo.png";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import ButtonSecondary from "./ButtonSecondary";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Cookies from "js-cookie";
 
-const Header = ({ search, setSearch }) => {
+const Header = ({ token, setToken, search, setSearch }) => {
   return (
     <div className="py-8 bg-gradient-to-r from-blue-dark-marvel to-blue-light-marvel sticky top-0 shadow-box-shadow">
       <div className="flex items-center justify-evenly gap-8 mx-auto">
@@ -40,14 +41,27 @@ const Header = ({ search, setSearch }) => {
               <Button text={"Favoris"} />
             </Link>
           </div>
-          <div className="flex gap-2">
-            <Link to="/signup" className="text-white">
-              <ButtonSecondary text={"S'inscrire"} />
-            </Link>
-            <Link to="#" className="text-white">
-              <ButtonSecondary text={"Connexion"} />
-            </Link>
-          </div>
+          {token ? (
+            <button
+              className="text-white"
+              text={"Se deconnecter"}
+              onClick={() => {
+                Cookies.remove("token");
+                setToken(null);
+              }}
+            >
+              <ButtonSecondary text={"Déconnexion"} />
+            </button>
+          ) : (
+            <div className="flex gap-2">
+              <Link to="/signup" className="text-white">
+                <ButtonSecondary text={"S'inscrire"} />
+              </Link>
+              <Link to="/login" className="text-white">
+                <ButtonSecondary text={"Connexion"} />
+              </Link>
+            </div>
+          )}
         </nav>
       </div>
     </div>

@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
-const SignUp = ({ setToken }) => {
+const Login = ({ setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(false);
@@ -23,30 +23,25 @@ const SignUp = ({ setToken }) => {
       if (!password) {
         return setErrorPasswordMessage("Le mot de passe est invalide");
       }
-      const response = await axios.post("http://localhost:4000/user/signup", {
+      const response = await axios.post("http://localhost:4000/user/login", {
         email,
         password,
       });
-      console.log(response.data);
       if (response.data.token) {
         Cookies.set("token", response.data.token, { expires: 15 });
         setToken(response.data.token);
-        setSuccessMessage("Votre compte à été créé avec succès !");
+        setSuccessMessage("Connexion réussie !");
         setTimeout(() => {
           navigate("/");
         }, 1800);
       }
-      //   window.location.reload();
     } catch (error) {
-      if (error.response.data.message === "Email already used") {
-        setErrorMessage("Cette email est déjà utilisé");
-      }
       console.log(error);
     }
   };
   return (
     <div className="mx-auto pt-16 bg-gradient-to-l from-blue-light-marvel to-blue-dark-marvel pb-16">
-      <h1 className="text-center text-white text-2xl mb-16">S'inscrire</h1>
+      <h1 className="text-center text-white text-2xl mb-16">Se connecter</h1>
       <form
         className="w-1/3 flex flex-col mx-auto gap-4"
         onSubmit={handleSubmit}
@@ -90,16 +85,8 @@ const SignUp = ({ setToken }) => {
           />
         </div>
         <button className="border-2 text-white p-2 rounded-3xl">
-          S'inscrire
+          Se connecter
         </button>
-        <div className="">
-          <p className="text-center text-sm text-white">Déjà un compte ? </p>
-          <Link to="/login">
-            <p className="text-center text-sm text-blue-500">
-              Connectez vous ici
-            </p>
-          </Link>
-        </div>
       </form>
       <div className="w-1/3 mx-auto pt-4">
         {errorMailMessage && (
@@ -119,4 +106,4 @@ const SignUp = ({ setToken }) => {
   );
 };
 
-export default SignUp;
+export default Login;
