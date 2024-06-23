@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import spidermanNotFound from "../assets/img/spiderman-not-found.png";
-const Home = ({ search }) => {
+const Home = ({ search, token }) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -33,7 +33,7 @@ const Home = ({ search }) => {
             {data.results.map((element) => {
               return (
                 <div key={element._id} className="shadow-box-shadow rounded-lg">
-                  <Link to={`/comics/${element._id}`}>
+                  <Link to={token ? `/comics/${element._id}` : "/signup"}>
                     {element.thumbnail.path.includes(notAvailable) ? (
                       <div className="flex w-80 h-40 bg-white rounded-lg">
                         <img
