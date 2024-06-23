@@ -49,7 +49,7 @@ const SignUp = ({ setToken, isMenuOpen }) => {
     }
   };
   return (
-    <div className="mx-auto pt-16 bg-gradient-to-l from-blue-light-marvel to-blue-dark-marvel pb-16">
+    <div className="px-4 mx-auto pt-16 bg-gradient-to-l from-blue-light-marvel to-blue-dark-marvel pb-16">
       <h1 className="text-center text-white text-2xl mb-16">S'inscrire</h1>
       <form
         className="md:w-1/3 flex flex-col mx-auto gap-4"
@@ -97,10 +97,12 @@ const SignUp = ({ setToken, isMenuOpen }) => {
           S'inscrire
         </button>
         <div className="">
-          <p className="text-center text-sm text-white">Déjà un compte ? </p>
+          <p className="text-center text-sm text-white pb-2">
+            Déjà un compte ?
+          </p>
           <Link to="/login">
             <p className="text-center text-sm text-blue-500">
-              Connectez vous ici
+              Connectez vous ici !
             </p>
           </Link>
         </div>

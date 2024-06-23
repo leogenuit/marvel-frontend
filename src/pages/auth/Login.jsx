@@ -43,7 +43,7 @@ const Login = ({ setToken, isMenuOpen }) => {
     }
   };
   return (
-    <div className="mx-auto pt-16 bg-gradient-to-l from-blue-light-marvel to-blue-dark-marvel pb-16">
+    <div className="px-4 mx-auto pt-16 bg-gradient-to-l from-blue-light-marvel to-blue-dark-marvel pb-16">
       <h1 className="text-center text-white text-2xl mb-16">Se connecter</h1>
       <form
         className="md:w-1/3 flex flex-col mx-auto gap-4"
