@@ -91,7 +91,7 @@ const Comics = ({ search }) => {
             {data.count === 0 && (
               <div className="min-h-60">
                 <p className="text-center text-white">
-                  Aucun personnages ne correspond à votre recherche ...
+                  Aucun comics ne correspond à votre recherche ...
                 </p>
               </div>
             )}
