@@ -29,19 +29,23 @@ const CharacterComics = () => {
       {isLoading ? (
         <p>chargement en cours ...</p>
       ) : (
-        <div className="flex flex-wrap">
-          {data.comics.map((comic) => {
-            return (
-              <div key={comic._id} className="w-1/4 p-2">
-                <p className="text-center italic">{comic.title}</p>
-                <img
-                  src={comic.thumbnail.path + "." + comic.thumbnail.extension}
-                  alt="image of comics"
-                  className="w-full"
-                />
-              </div>
-            );
-          })}
+        <div>
+          <div className="flex flex-wrap pt-32">
+            {data.comics.map((comic) => {
+              return (
+                <div key={comic._id} className="w-1/4 p-2 ">
+                  <p className="text-center italic">
+                    {comic.title.substring(0, 36)}
+                  </p>
+                  <img
+                    src={comic.thumbnail.path + "." + comic.thumbnail.extension}
+                    alt="image of comics"
+                    className="w-full"
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>

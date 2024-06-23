@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import spidermanNotFound from "../assets/img/spiderman-not-found.png";
+
 const Home = ({ search, token }) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +26,7 @@ const Home = ({ search, token }) => {
   return (
     <div className="pt-16 w-full mx-auto pb-16 bg-gradient-to-l from-blue-light-marvel to-blue-dark-marvel">
       {isLoading ? (
-        <h1>Merci de patienter</h1>
+        <h1 className="text-center text-white">Merci de patienter ...</h1>
       ) : (
         <div>
           <h1 className="text-center text-white text-4xl mb-16">Personnages</h1>

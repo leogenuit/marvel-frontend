@@ -69,7 +69,10 @@ const Header = ({ token, setToken, search, setSearch }) => {
             <Button text={"Favoris"} />
           </Link>
           {token ? (
-            <button className="text-white" onClick={handleLogout}>
+            <button
+              className="text-white bg-red-marvel rounded-2xl"
+              onClick={handleLogout}
+            >
               <ButtonSecondary text={"Déconnexion"} />
             </button>
           ) : (
