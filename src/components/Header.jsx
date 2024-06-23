@@ -52,7 +52,7 @@ const Header = ({ token, setToken, search, setSearch }) => {
           } md:flex flex-col md:flex-row gap-8 absolute md:static top-16 left-0 w-full md:w-auto  md:bg-transparent p-4 md:p-0 z-50`}
         >
           <Link to="/" onClick={() => setIsMenuOpen(false)}>
-            <Button text={"Personnage"} />
+            <Button text={"Personnages"} />
           </Link>
           <Link
             to="/comics"
