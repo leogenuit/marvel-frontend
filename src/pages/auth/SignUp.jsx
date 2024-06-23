@@ -23,10 +23,13 @@ const SignUp = ({ setToken }) => {
       if (!password) {
         return setErrorPasswordMessage("Le mot de passe est invalide");
       }
-      const response = await axios.post("http://localhost:4000/user/signup", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://leo--marvel--jb29wjf8x9mr.code.run/user/signup",
+        {
+          email,
+          password,
+        }
+      );
       console.log(response.data);
       if (response.data.token) {
         Cookies.set("token", response.data.token, { expires: 15 });
