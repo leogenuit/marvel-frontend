@@ -4,13 +4,16 @@ import { useState, useEffect } from "react";
 const Comics = ({ search }) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     // Get all comics
     const fetchData = async () => {
+      const limit = 100;
+      const skip = (page - 1) * limit;
       try {
         const response = await axios.get(
-          `https://leo--marvel--jb29wjf8x9mr.code.run/comics?title=${search}`
+          `https://leo--marvel--jb29wjf8x9mr.code.run/comics?title=${search}&limit=${limit}&skip=${skip}`
         );
         setData(response.data);
         setIsLoading(false);
@@ -19,7 +22,7 @@ const Comics = ({ search }) => {
       }
     };
     fetchData();
-  }, [search]);
+  }, [search, page]);
 
   return (
     <>
@@ -54,6 +57,18 @@ const Comics = ({ search }) => {
                   </div>
                 );
               })}
+            </div>
+            <div className="flex justify-between w-1/3 mx-auto pt-16">
+              <button
+                className="text-white"
+                onClick={() => setPage(page - 1)}
+                disabled={page === 1}
+              >
+                ← Précendent
+              </button>
+              <button className="text-white" onClick={() => setPage(page + 1)}>
+                Suivant →
+              </button>
             </div>
             {data.count === 0 && (
               <div className="min-h-60">

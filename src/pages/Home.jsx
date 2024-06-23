@@ -6,13 +6,16 @@ import spidermanNotFound from "../assets/img/spiderman-not-found.png";
 const Home = ({ search, token }) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     // Get all characters
     const fetchData = async () => {
+      const limit = 100;
+      const skip = (page - 1) * limit;
       try {
         const response = await axios.get(
-          `https://leo--marvel--jb29wjf8x9mr.code.run/characters?name=${search}`
+          `https://leo--marvel--jb29wjf8x9mr.code.run/characters?name=${search}&limit=${limit}&skip=${skip}`
         );
         setData(response.data);
         setIsLoading(false);
@@ -21,7 +24,7 @@ const Home = ({ search, token }) => {
       }
     };
     fetchData();
-  }, [search]);
+  }, [search, page]);
   const notAvailable = "image_not_available";
   return (
     <div className="pt-16 w-full mx-auto pb-16 bg-gradient-to-l from-blue-light-marvel to-blue-dark-marvel">
@@ -73,6 +76,18 @@ const Home = ({ search, token }) => {
                 </div>
               );
             })}
+          </div>
+          <div className="flex justify-between w-1/3 mx-auto pt-16">
+            <button
+              className="text-white"
+              onClick={() => setPage(page - 1)}
+              disabled={page === 1}
+            >
+              ← Précendent
+            </button>
+            <button className="text-white" onClick={() => setPage(page + 1)}>
+              Suivant →
+            </button>
           </div>
           {data.count === 0 && (
             <div className="min-h-60">
