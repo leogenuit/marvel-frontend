@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
-const Login = ({ setToken }) => {
+const Login = ({ setToken, isMenuOpen }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(false);
@@ -46,7 +46,7 @@ const Login = ({ setToken }) => {
     <div className="mx-auto pt-16 bg-gradient-to-l from-blue-light-marvel to-blue-dark-marvel pb-16">
       <h1 className="text-center text-white text-2xl mb-16">Se connecter</h1>
       <form
-        className="w-1/3 flex flex-col mx-auto gap-4"
+        className="md:w-1/3 flex flex-col mx-auto gap-4"
         onSubmit={handleSubmit}
       >
         <div className="flex flex-col">

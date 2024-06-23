@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
-const SignUp = ({ setToken }) => {
+const SignUp = ({ setToken, isMenuOpen }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(false);
   const [errorMailMessage, setErrorMailMessage] = useState(false);
   const [errorPasswordMessage, setErrorPasswordMessage] = useState(false);
   const [successMessage, setSuccessMessage] = useState(false);
+  //   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -51,7 +52,7 @@ const SignUp = ({ setToken }) => {
     <div className="mx-auto pt-16 bg-gradient-to-l from-blue-light-marvel to-blue-dark-marvel pb-16">
       <h1 className="text-center text-white text-2xl mb-16">S'inscrire</h1>
       <form
-        className="w-1/3 flex flex-col mx-auto gap-4"
+        className="md:w-1/3 flex flex-col mx-auto gap-4"
         onSubmit={handleSubmit}
       >
         <div className="flex flex-col">
